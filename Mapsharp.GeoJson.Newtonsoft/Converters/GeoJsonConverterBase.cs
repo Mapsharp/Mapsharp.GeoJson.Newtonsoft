@@ -40,6 +40,8 @@ namespace Mapsharp.GeoJson.Newtonsoft.Converters
 
         protected void ThrowIfNotValid(T t)
         {
+            if (t == null) throw new ArgumentNullException(nameof(t));
+
             List<ValidationResult> validationResults = new List<ValidationResult>();
             var validationContext = new ValidationContext(t);
 
